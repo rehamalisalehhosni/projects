@@ -23,20 +23,31 @@
                 <input type="hidden" name="alians" value="" id="alian_choose"/>
                 <input type="button" name="Start" value="Start Game" id="Start_Game" onclick="StartGame()"/>
             </form>
+            <audio id="intro"  autoplay loop >
+                <source src="audio\Space_Is_Fun__animated_music_video__MrWeebl.mp3" type="audio/mpeg">
+                </source>
+            </audio><br/>
         </div>
         <div id="container">
+            <audio id="lvl1Theme"   loop>
+                <source src="audio\07-stage-2-stage-5.mp3" type="audio/mpeg" >
+                </source>
+            </audio><br/>
+            <div class="data"><img src="img/heart.png" /><span id="life"></span></div>
+            <div class="data"><img src="img/coin.png" /><span id="score">0</span></div>
+            <div class="data">level <span id="level"></span></div>
             <div class="time"><img src="img/clock-icon.png" /><span  id="timer"></span></div> 
             <div id="aliens"></div>
         </div>
-         <!-- magdii -->
+        <!-- magdii -->
         <div id ="gameOver" >
             <p id="gameOverParagraph" style="margin : 30px ;">Game over <p>
             <div id="planet">
                 <img src="img/mars.png" width="100" height="100">
             </div>
-           <button id="playAgain"  type="button" onclick="index.html" >play again</button>
+            <button id="playAgain"  type="button" onclick="index.html" >play again</button>
         </div>
-         <!-- /magdii -->
+        <!-- /magdii -->
         <script type="text/javascript" src="js/javascript.js"></script>
         <script type="text/javascript" src="js/javascript_check.js"></script>
         <script type="text/javascript" src="js/javascript_score.js"></script>

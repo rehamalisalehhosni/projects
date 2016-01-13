@@ -13,13 +13,13 @@ function alienOperations(id) {
         Game.levels.Aliens[id - 1].live = false;
         //  incrementScore();
         tempalinenarray.push(id - 1);
+        incrementScore();
         checkAlines();
     }
 }
 function checkAlines() {
     var aliens = document.getElementById('aliens');
     if (tempalinenarray.length == Game.levels.Aliens.length) {
-        console.log('new');
         Game.levels.noAliens = Game.levels.noAliens + 10;
         Game.levels.Nolevel = Game.levels.Nolevel++;
         Game.levels.timemovein3px = 60;

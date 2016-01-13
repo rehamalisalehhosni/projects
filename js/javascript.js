@@ -41,6 +41,12 @@ function StartGame() {
     } else {
         //name ,level,aliens,time,char,diedafter,score ,liveno
         StartGameContainer(name.value, 1, 20, 30000, alian_choose.value, 1, 0, 3, 60);
+        var lvl1Song = document.getElementById('lvl1Theme');
+        lvl1Song.load();
+        lvl1Song.play();
+        level();//display level
+        life();//display level
+        
     }
 }
 //start leve
@@ -227,8 +233,6 @@ function movetoPositiondawn(cur) {
 //    createAliansData(cur+1);
 }
 function MoveAlien(dir, cur) {
-    console.log(dir);
-    console.log(cur);
     var containerPos = containerPostion();
     var aliensHtml = document.getElementById('aliens');
     var alianELE = aliensHtml.getElementsByTagName('div')[cur];
