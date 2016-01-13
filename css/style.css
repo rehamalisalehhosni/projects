@@ -47,7 +47,7 @@ body {
     text-align: center;
     font: 13px  tahoma, arial, sans-serif;
     color:#000;
-    background: #273554;
+    background: #273554 url(../img/bg.png) ;
     width: 100%;
     text-align: center;
 }#loader{
@@ -107,10 +107,10 @@ body {
     overflow: hidden;
     width: 700px;
     height: 500px;
-   border: solid 1px rgba(204, 204, 204, 0.51);
+    border: solid 1px rgba(204, 204, 204, 0.51);
     margin: 0 auto;
     margin-top: 30px;
-    background: #050D33;
+    background: rgba(5, 13, 51, 0.82);
     border-radius: 5px;
     position: fixed;
     left: 23%;
@@ -124,3 +124,97 @@ body {
     width: 70px;
     height: 70px;
 }
+
+//////magdiiiii ///////////////////////
+.time {
+    color: white;
+    text-align: left;
+    padding: 5px;
+    float: left;
+}
+
+#gameOver{
+    display: none;
+    color: white;
+    font-size: 30px;
+/*    margin-top: 50px;*/
+    
+    background-color: #B1BDD8;
+/*    width: 1000px;*/
+    margin: 0px auto;
+/*    margin-top: 50px;*/
+/*    height: 550px;*/
+     background:url("../img/background1.png")no-repeat center center; 
+     min-height: 666px;
+     width: 100%;
+
+
+/*    background: url("../img/background1.png") no-repeat;*/
+}
+.time img{
+    position: relative;
+    top: 3px;
+    right: 3px;
+    left: 3px;
+}
+#timer{
+    padding-left: 5px;
+}
+.time {
+    color: #ff5155;
+    text-align: left;
+    padding: 5px;
+    float: left;
+}
+
+#playAgain{
+    display:none;
+    padding: 15px; 
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0px;
+    margin-top: 150px;
+    background: rgba(239, 44, 35, 0.78);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    width: 200px;
+    height: 41px;
+    position: relative;
+    z-index: 1000 ;
+}
+
+#gameOverParagraph{
+    position: relative ; top: 150px ;
+}
+
+
+#planet{
+     width: 100px;
+    height: 100px;
+    //background-color: red;
+    position: relative;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    border-radius: 20px;
+    z-index: 900;
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   { left:0px; top:0px;}
+    25%  { left:900px; top:0px;}
+    35%  {left: 500px; top: 200px;}
+    50%  { left:900px; top:400px;}
+    75%  { left:0px; top:400px;}
+    87%   {left: 500px; top: 200px;}
+    100% { left:0px; top:0px;}
+}
+////// !magdiiiii//////
