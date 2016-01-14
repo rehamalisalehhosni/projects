@@ -40,7 +40,7 @@ function StartGame() {
         rq.textContent = '  * required';
     } else {
         //name ,level,aliens,time,char,diedafter,score ,liveno
-        StartGameContainer(name.value, 1, 20, 30000, alian_choose.value, 1, 0, 3, 60);
+        StartGameContainer(name.value, 1, 13, 30000, alian_choose.value, 1, 0, 3, 60);
         var lvl1Song = document.getElementById('lvl1Theme');
         lvl1Song.load();
         lvl1Song.play();
@@ -82,6 +82,7 @@ var objAliens = function(User, score, level, noAliens, time, Char, diedAfter, li
     return gameAttriebute;
 }
 function StartGameContainer(User, level, noAliens, time, Char, diedAfter, score, lives, timemovein3px) {
+    
     var alinc = 0;
     if (loader.html != '') {
         loader.remove();
@@ -92,6 +93,7 @@ function StartGameContainer(User, level, noAliens, time, Char, diedAfter, score,
         if (alinc >= Game.levels.Aliens.length) {
             alinc = 0;
         }
+//        console.log(Game.levels.Nolevel);
         createAliansData(alinc);
         alinc++;
     }, 2000);
@@ -227,7 +229,7 @@ function movetoPositiondawn(cur) {
     arrC.push(obja);
     var sel = Math.floor(Math.random() * 2);
 
-    timeMoveInt = setInterval(function() {
+    Game.levels.Aliens[cur].timeMoveInt  = setInterval(function() {
         MoveAlien(arrC[sel], cur);
     }, Game.levels.Aliens[cur].maxpixelmoveinsec);
 //    createAliansData(cur+1);

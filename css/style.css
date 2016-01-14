@@ -137,19 +137,19 @@ body {
     display: none;
     color: white;
     font-size: 30px;
-/*    margin-top: 50px;*/
-    
+    /*    margin-top: 50px;*/
+
     background-color: #B1BDD8;
-/*    width: 1000px;*/
+    /*    width: 1000px;*/
     margin: 0px auto;
-/*    margin-top: 50px;*/
-/*    height: 550px;*/
-     background:url("../img/background1.png")no-repeat center center; 
-     min-height: 666px;
-     width: 100%;
+    /*    margin-top: 50px;*/
+    /*    height: 550px;*/
+    background:url("../img/background1.png")no-repeat center center; 
+    min-height: 666px;
+    width: 100%;
 
 
-/*    background: url("../img/background1.png") no-repeat;*/
+    /*    background: url("../img/background1.png") no-repeat;*/
 }
 .time img{
     position: relative;
@@ -194,7 +194,7 @@ body {
 
 
 #planet{
-     width: 100px;
+    width: 100px;
     height: 100px;
     //background-color: red;
     position: relative;
@@ -218,7 +218,7 @@ body {
     padding-right: 10px;
     padding-top: 6px;
     margin-left: 14%;
-    
+
 }.data span{
     float: left;
 }
@@ -231,4 +231,20 @@ body {
     75%  { left:0px; top:400px;}
     87%   {left: 500px; top: 200px;}
     100% { left:0px; top:0px;}
+}
+#youlose ,#win{
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 40px;
+    text-align: center;
+    border: solid 1px #ccc;
+    top: 140px;
+    width: 300px;
+    height: 200px;
+    left: 205px;
+    color: #fff;
+    padding-top: 20px;
+    font-size: 24px;
 }
