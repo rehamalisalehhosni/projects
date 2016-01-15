@@ -26,7 +26,7 @@ function checkAlines() {
         Game.levels.Nolevel = Game.levels.Nolevel+1;
         Game.levels.timemovein3px = Game.levels.timemovein3px ;
         if (Game.levels.Nolevel >= 2) {
-            Game.time = 40000;
+            Game.time = 44000;
         }
         var win = document.getElementById('win');
         win.setAttribute("style", "display:block");

@@ -86,14 +86,18 @@ var objAliens = function(User, score, level, noAliens, time, Char, diedAfter, li
 }
 function rest() {
     console.log('d');
+//    clearInterval(timefu2);
+//    clearInterval(newint);
     var aliens = document.getElementById('aliens');
     var div_d = aliens.getElementsByTagName('div');
     for (var i = 0; i < Game.levels.Aliens.length; i++) {
+     if(Game.levels.Aliens[i].live==true){
         clearInterval(Game.levels.Aliens[i].timeMoveInt);
+     }
     }
-    for (var i = 0; i < div_d.length; i++) {
-        div_d[i].remove();
-    }
+//    for (var i = 0; i < div_d.length; i++) {
+//        div_d[i].remove();
+//    }
     aliens.innerHTML = '';
     Game.levels.Aliens = [];
     tempalinenarray = [];

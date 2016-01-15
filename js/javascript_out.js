@@ -32,17 +32,18 @@ function tryAgain() {
     Game.lives = Game.lives - 1;
     var life = document.getElementById('life');
     life.innerHTML = Game.lives;
-        clearInterval(timefu2);
-         clearInterval(newint);
     if (Game.lives == 0) {
          rest();
+        clearInterval(timefu2);
+         clearInterval(newint);
         container.style.display="none";
         gameOver.style.display = "block";
         playAgain.style.display = "block";
     } else {
         youlose.setAttribute("style", "display:block");
+            clearInterval(timefu2);
+             clearInterval(newint);
         setTimeout(function() {
-
             youlose.setAttribute("style", "display:none");
             youlose.style.display = 'none';
             Game.levels.noAliens = Game.levels.noAliens;
