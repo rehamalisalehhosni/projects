@@ -17,27 +17,29 @@ function alienOperations(id) {
         checkAlines();
     }
 }
+
 function checkAlines() {
     var aliens = document.getElementById('aliens');
-    if (tempalinenarray.length == Game.levels.Aliens.length) {
-        Game.levels.noAliens = Game.levels.noAliens + 7;
-        Game.levels.Nolevel = Game.levels.Nolevel++;
-        Game.levels.timemovein3px = 60;
-        Game.time=parseInt(Game.time);
-        aliens.innerHTML = '';
-        Game.levels.Aliens=[];
-        tempalinenarray=[];
+    if (tempalinenarray.length == Game.levels.Aliens.length&&Game.levels.Aliens.length!=0) {
+        clearInterval(timefu2);
+        Game.levels.noAliens = Game.levels.noAliens + 5;
+        Game.levels.Nolevel = Game.levels.Nolevel+1;
+        Game.levels.timemovein3px = Game.levels.timemovein3px ;
+        if (Game.levels.Nolevel >= 2) {
+            Game.time = 40000;
+        }
         var win = document.getElementById('win');
         win.setAttribute("style", "display:block");
         setTimeout(function() {
-            youlose.setAttribute("style", "display:none");
-            youlose.style.display = 'none';
-            Game.levels.noAliens = Game.levels.noAliens;
-            Game.levels.Nolevel = Game.levels.Nolevel;
+            win.setAttribute("style", "display:none");
+            win.style.display = 'none';
+            level();
+//            Game.levels.noAliens = Game.levels.noAliens;
+//            Game.levels.Nolevel = Game.levels.Nolevel;
 //        Game.levels.timemovein3px = Game.levels.timemovein3px;
 //            StartGameContainer(Game.username, Game.levels.Nolevel, Game.levels.noAliens, 30000, Game.charName, Game.levels.diedAfter, Game.score, Game.lives, Game.levels.timemovein3px);
-        }, 7000);
-        StartGameContainer(Game.username, Game.levels.Nolevel, Game.levels.noAliens, Game.time, Game.charName, Game.levels.diedAfter, 0, Game.lives, Game.levels.timemovein3px);
+          StartGameContainer(Game.username, Game.levels.Nolevel, Game.levels.noAliens,  Game.time, Game.charName, Game.levels.diedAfter, Game.score, Game.lives, Game.levels.timemovein3px);
+        }, 3000);
     }// enf if
 
 } //end of fun

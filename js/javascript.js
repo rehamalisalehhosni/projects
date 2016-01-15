@@ -2,6 +2,9 @@ var loader = document.getElementById('loader');
 var container = document.getElementById('container');
 var Game;
 var tempalinenarray = [];
+var fuTime, timefu2;
+var newint;
+
 (function() {
     loader.style.display = "block";
     loader.style.top = '0px';
@@ -81,21 +84,46 @@ var objAliens = function(User, score, level, noAliens, time, Char, diedAfter, li
     }
     return gameAttriebute;
 }
+function rest() {
+    console.log('d');
+    var aliens = document.getElementById('aliens');
+    var div_d = aliens.getElementsByTagName('div');
+    for (var i = 0; i < Game.levels.Aliens.length; i++) {
+        clearInterval(Game.levels.Aliens[i].timeMoveInt);
+    }
+    for (var i = 0; i < div_d.length; i++) {
+        div_d[i].remove();
+    }
+    aliens.innerHTML = '';
+    Game.levels.Aliens = [];
+    tempalinenarray = [];
+     var aliens = document.getElementById('aliens');
+    var div_d = aliens.getElementsByTagName('div');
+    Game = {};
+
+}
+
 function StartGameContainer(User, level, noAliens, time, Char, diedAfter, score, lives, timemovein3px) {
-    
     var alinc = 0;
+        if(aliens.innerHTML!=''){
+        rest();
+    }
     if (loader.html != '') {
         loader.remove();
         container.style.display = 'block';
     }
     Game = objAliens(User, score, level, noAliens, time, Char, diedAfter, lives, timemovein3px);
-    setInterval(function() {
-        if (alinc >= Game.levels.Aliens.length) {
-            alinc = 0;
-        }
+     newint= setInterval(function() {
+        if (tempalinenarray.length == Game.levels.Aliens.length&&Game.levels.Aliens.length!=0) {
+            clearInterval(newint);
+        } else {
+            if (alinc >= Game.levels.Aliens.length) {
+                alinc = 0;
+            }
 //        console.log(Game.levels.Nolevel);
-        createAliansData(alinc);
-        alinc++;
+            createAliansData(alinc);
+            alinc++;
+        }
     }, 2000);
     starttime();
 }

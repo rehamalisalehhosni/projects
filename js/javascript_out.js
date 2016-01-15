@@ -7,7 +7,6 @@ playAgain.onclick = function() {
     location.href = "index.html";
 };
 
-var fuTime, timefu2;
 function starttime() {
     timer.innerHTML = Game.time;
     timefu2 = setInterval(
@@ -33,28 +32,23 @@ function tryAgain() {
     Game.lives = Game.lives - 1;
     var life = document.getElementById('life');
     life.innerHTML = Game.lives;
+        clearInterval(timefu2);
+         clearInterval(newint);
     if (Game.lives == 0) {
-        container.remove();
+         rest();
+        container.style.display="none";
         gameOver.style.display = "block";
         playAgain.style.display = "block";
     } else {
         youlose.setAttribute("style", "display:block");
-        for (var i = 0; i < Game.levels.Aliens.length; i++) {
-            clearInterval(Game.levels.Aliens[i].timeMoveInt);
-        }
-        for (var i = 0; i < div_d.length; i++) {
-            div_d[i].remove();
-        }
-        aliens.innerHTML = '';
-        Game.levels.Aliens = [];
-        tempalinenarray = [];
         setTimeout(function() {
+
             youlose.setAttribute("style", "display:none");
             youlose.style.display = 'none';
             Game.levels.noAliens = Game.levels.noAliens;
             Game.levels.Nolevel = Game.levels.Nolevel;
-//        Game.levels.timemovein3px = Game.levels.timemovein3px;
+//          Game.levels.timemovein3px = Game.levels.timemovein3px;
             StartGameContainer(Game.username, Game.levels.Nolevel, Game.levels.noAliens, 30000, Game.charName, Game.levels.diedAfter, Game.score, Game.lives, Game.levels.timemovein3px);
-        }, 7000);
+        }, 5000);
     }
 }

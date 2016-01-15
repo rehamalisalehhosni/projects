@@ -9,7 +9,6 @@
 function incrementScore(){
 
 Game.score +=  parseInt(Game.levels.diedAfter)*100;
-console.log(Game.score);
 
 var scorehtml=document.getElementById('score');
 scorehtml.innerHTML=Game.score;
@@ -17,8 +16,10 @@ scorehtml.innerHTML=Game.score;
 
 function level() {
 
-var level=document.getElementById('level');
-level.innerHTML=Game.levels.Nolevel;
+var level2=document.getElementById('level');
+level2.innerHTML=Game.levels.Nolevel;
+console.log(Game.levels.Nolevel);
+
 }
 function life() {
 
